@@ -35,7 +35,7 @@ class HomeController extends Controller
 
         $u = Auth::user();
         $content
-            ->title('MOGADISHU RESIDENCE - Dashboard')
+            ->title('RUBAGA APARTMENTS - Dashboard')
             ->description('Hello ' . $u->username . "!");
          
 
@@ -85,7 +85,7 @@ class HomeController extends Controller
         $content->row(function (Row $row) {
             $row->column(12, function (Column $column) {
                 $column->append(view('widgets.dashboard-title', [
-                    'title' => 'MOGADISHU RESIDENCE',
+                    'title' => 'RUBAGA APARTMENTS',
                     'sub_title' => 'Dashboard',
                     'icon' => 'fa fa-dashboard',
                     'color' => 'bg-aqua'

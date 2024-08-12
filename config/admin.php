@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'MOGADISHU RESIDENCE - Admin', 
+    'name' => 'Rubaga Apartment - Admin', 
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>MOGADISHU RESIDENCE</b> admin',
+    'logo' => '<b>Rubaga Apartment</b> admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>MOGADISHU RESIDENCE</b>',
+    'logo-mini' => '<b>Rubaga Apartment</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -289,7 +289,7 @@ return [
     | "sidebar-mini".
     |
     */
-    'layout' => ['fixed'],
+    'layout' => ['sidebar-mini'],
 
     /*
     |--------------------------------------------------------------------------

@@ -33,6 +33,7 @@
 
 <body class="hold-transition login-page"
     style="background: url({{ url('public/assets/images/bg-1.jpg') }}) no-repeat;background-size: cover;">
+    
     <div class="login-box" >
         <div class="login-logo">
 
@@ -43,13 +44,14 @@
 
             <br>
             <center>
-                <img width="60%" src="{{ url('public/assets/images/logo.png') }}" alt="">
+             {{-- <img width="60%" src="{{ url('public/assets/images/logo.png') }}" alt=""> --}}
             </center>
             <br>
-            <hr style="background-color: rgb(6, 106, 44); height: 10px;">
+            <hr style="background-color: rgb(32, 12, 183); height: 10px;">
+            
             <br>
-            <p class="login-box-msg h3" style="color: black; font-weight: 800;">Welcome Back</p>
-            <br>
+            <p class="login-box-msg h3" style="color: rgb(23, 12, 86); font-weight: 800;">Welcome Back</p>
+            
 
             <form action="{{ admin_url('auth/login') }}" method="post">
                 <div class="form-group has-feedback {!! !$errors->has('username') ?: 'has-error' !!}">
@@ -96,12 +98,17 @@
                         <button type="submit"
                             class="btn btn-primary btn-block btn-flat">{{ trans('admin.login') }}</button>
                     </div>
+                   
+
                     <!-- /.col -->
                 </div>
             </form>
             <br> 
+           
 
         </div>
+        <hr style="background-color: rgb(183, 12, 12); height: 10px;">
+             <br> 
         <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->

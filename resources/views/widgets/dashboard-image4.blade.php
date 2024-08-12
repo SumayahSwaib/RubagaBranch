@@ -6,7 +6,7 @@ $number = isset($number) ? $number : '0.00';
 $sub_title = isset($sub_title) ? $sub_title : null;
 $link = isset($link) ? $link : 'javascript:;';
 
-$bg = 'bg-success';
+$bg = '';
 $text = 'text-white';
 $border = 'border-white';
 $text2 = 'text-dark';
@@ -30,8 +30,9 @@ $text2 = 'text-dark';
                 {{ 'UGX ' . number_format($rentings->sum('commision_amount')) }}
             </span><br>
         </p> --}}
-        <hr class="mt-0 mb-2 mb-md-2" style="background-color: white; height: 2px;">
-        <p class="h4  text-bold mb-2 bg-white text-success pl-3 pt-2 pb-1">Forth Flr</p>
+        <hr class="mt-0 mb-2 mb-md-2" style="background-color: var(--primary); height: 2px;">
+        <p class="h4  text-bold mb-2 bg-primary text-white pl-3 pt-2 pb-1">Forth Flr</p>
+        
        
         {{-- <img class="text-center img img-fluid rounded-circle" style="border-radius: 50%;"
                     src="{{public_path('storage/Mogadishu.png') }}" alt="logo"> --}}
