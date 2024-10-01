@@ -39,8 +39,10 @@ $imagelink = url('floorimages/logo-1.png' );
                         <img class="img-fluid" src="{{$imagelink}}">
                     </td> --}}
                     <td class=" text-center">
-                        <p class="p-0 m-0" style="font-size: 2.5rem;"><b>NDEGE ESTATE LIMITED</b></p>
-                        <p class="mt-1">Dealers in Rental Houses</p>
+                        <p class="p-0 m-0" style="font-size: 2.5rem;color:rgb(33, 9, 84)"><b>NDEGE ESTATE LIMITED</b></p>
+                       
+                        <p class=" text-center" style="font-size: 1.5rem;color:rgb(216, 30, 30)"><strong>&#40; Rubaga Apartments&#41;</strong> </p>
+                       
                         <p class="mt-1">P.O.BOX: <b>28044 - Kampala - Uganda</b>
                         
                         </p>
@@ -82,7 +84,7 @@ $imagelink = url('floorimages/logo-1.png' );
         </p>
            
        </p>
-       <p class="mt-3 mb-3">Balance: <b>UGX {{ number_format($receipt->balance) }}</b></p>
+       <p class="mt-3 mb-3" style="color: red;">Balance: <b>UGX {{ number_format($receipt->balance) }}</b></p>
        
  
   
@@ -90,11 +92,11 @@ $imagelink = url('floorimages/logo-1.png' );
             <tr>
                 <td>
                     <div class="  d-inline p-2 px-3"
-                        style="font-weight: 800; font-size: 1.4rem; border: solid black .2rem;">
+                        style="font-weight: 800; font-size: 1.4rem; border: solid rgb(6, 6, 70) .2rem;">
                         UGX {{ number_format($receipt->amount +$receipt->securty_deposit+ $receipt->days_before) }}
                     </div>
                 </td>
-                <td class="text-right">
+                <td class="text-right" >
                     Approved by <b>.............................</b> 
                 </td>
             </tr>
