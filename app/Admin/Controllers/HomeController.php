@@ -58,7 +58,7 @@ class HomeController extends Controller
                     ])->count(),  */
                      'BalanceT' => TenantPayment::where(
                         "balance",
-                        '>',
+                        '<',
                         0
                     )->count(),
                      'BalanceAll' => TenantPayment::where(
@@ -66,14 +66,21 @@ class HomeController extends Controller
                         '>',
                         0
                     )->get(),
-                     /* 'ongoing_tasks' => TenantPayment::where([
-                        'status' => 'Occupied'
+                      /* 'vacantrooms' => TenantPayment::where([
+                        'status' => 'vacant'
                     ])->limit(10)
-                        ->get()   */
+                        ->get()    */
                 ]));
             
             
             }); 
+
+            $row->column(6, function (Column $column) {
+
+                //$column->append(Dashboard::dashboard_calender());
+            });
+
+
             
         });
         $content->row(function (Row $row) {
