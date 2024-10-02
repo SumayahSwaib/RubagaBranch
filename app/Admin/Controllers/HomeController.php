@@ -45,26 +45,31 @@ class HomeController extends Controller
             $row->column(6, function (Column $column) {
                
                 $column->append(view('widgets.dashboard-segment-1', [
-                    'pending_tasks_count' => Room::where([
+                    'vacantR' => Room::where([
                         'status' => 'Vacant'
                     ])->count(),
 
-                    /* 'ongoing_tasks_count' => Consultation::where([
-                        'main_status' => 'Ongoing'
-                    ])->count(), */
+                     'OcupiedR' => Room::where([
+                        'status' => 'Occupied'
+                    ])->count(), 
 
-                    /* 'my_tasks_count' => MedicalService::where([
+                     /* 'my_tasks_count' => MedicalService::where([
                         "status" => "Pending"
-                    ])->count(), */
-                    /* 'pending_for_payment' => Consultation::where(
-                        "total_due",
+                    ])->count(),  */
+                     'BalanceT' => TenantPayment::where(
+                        "balance",
                         '>',
                         0
-                    )->get(), */
-                    /* 'ongoing_tasks' => MedicalService::where([
-                        'status' => 'Pending'
+                    )->count(),
+                     'BalanceAll' => TenantPayment::where(
+                        "balance",
+                        '>',
+                        0
+                    )->get(),
+                     /* 'ongoing_tasks' => TenantPayment::where([
+                        'status' => 'Occupied'
                     ])->limit(10)
-                        ->get() */
+                        ->get()   */
                 ]));
             
             

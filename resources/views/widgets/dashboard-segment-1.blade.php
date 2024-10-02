@@ -1,5 +1,5 @@
 <?php
-if (!isset($tasks_done)) {
+ /* if (!isset($tasks_done)) {
     $tasks_done = 0;
 }
 
@@ -11,7 +11,7 @@ if (!isset($project_count)) {
 }
 if (!isset($tasks_count)) {
     $tasks_count = 0;
-}
+}  */
 ?>
 
 <div class="row">
@@ -22,7 +22,7 @@ if (!isset($tasks_count)) {
                     'is_dark' => false,
                     'title' => 'VACANT ROOMS',
                     'icon' => 'box',
-                    'number' =>' 50,',
+                    'number' =>$vacantR,
                     'link' => admin_url('rooms'),
                 ])
             </div>
@@ -31,7 +31,7 @@ if (!isset($tasks_count)) {
                     'is_dark' => false,
                     'title' => 'OCCUPIED ROOMS',
                     'icon' => 'list-task',
-                    'number' => "36,",
+                    'number' =>$OcupiedR,
                     'link' => admin_url('rooms'),
                 ])
 
@@ -39,28 +39,29 @@ if (!isset($tasks_count)) {
              <div class="col-md-4">
                 @include('widgets.box-6', [
                     'is_dark' => true,
-                    'title' => 'Tenants with<br> Balance',
+                    'title' => 'TENANTS WITH <br> BALANCE',
                     'icon' => 'calendar-event-fill',
-                    'number' => "40",
+                    'number' =>$BalanceT,
 
                   /*   'number' => "$my_tasks_count", */
-                    'link' => admin_url('medical-services'),
+                    'link' => admin_url('tenantpayments'),
                 ])
             </div> 
         </div>
     </div>
 </div>
-<div class="row">
-    {{-- <div class="col-md-6">
-        @include('dashboard.consultations-payments', [
-            'items' => $pending_for_payment,
+{{-- <div class="row">
+     <div class="col-md-6">
+        @include('dashboard.recent-payments', [
+           
+             'items' => $BalanceAll, 
             'title' => 'Pending payments',
         ])
     </div>
-    <div class="col-md-6">
+     <div class="col-md-6">
         @include('dashboard.tasks', [
-            'items' => $ongoing_tasks,
+            'items' => $vacantrooms,
             'title' => 'Pending tasks',
         ])
-    </div> --}}
-</div>
+    </div> 
+</div> --}}
