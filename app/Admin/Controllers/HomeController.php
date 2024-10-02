@@ -41,24 +41,34 @@ class HomeController extends Controller
 
 
         $content->row(function (Row $row) {
-            /* $row->column(4, function (Column $column) {
-                $column->append(view('widgets.dashboard-groundfloor', [
-                   
-                    'rooms' => Room::where('floor', 'Floor1')->get()
+            
+            $row->column(6, function (Column $column) {
+               
+                $column->append(view('widgets.dashboard-segment-1', [
+                    'pending_tasks_count' => Room::where([
+                        'status' => 'Vacant'
+                    ])->count(),
+
+                    /* 'ongoing_tasks_count' => Consultation::where([
+                        'main_status' => 'Ongoing'
+                    ])->count(), */
+
+                    /* 'my_tasks_count' => MedicalService::where([
+                        "status" => "Pending"
+                    ])->count(), */
+                    /* 'pending_for_payment' => Consultation::where(
+                        "total_due",
+                        '>',
+                        0
+                    )->get(), */
+                    /* 'ongoing_tasks' => MedicalService::where([
+                        'status' => 'Pending'
+                    ])->limit(10)
+                        ->get() */
                 ]));
-            });
-            $row->column(4, function (Column $column) {
-                $column->append(view('widgets.dashboard-floor1', [
-                    'rooms' => Room::where('floor', 'Floor2')->get()
-                    
-                ]));
-            });
-            $row->column(4, function (Column $column) {
-                $column->append(view('widgets.dashboard-floor2', [
-                    'rooms' => Room::where('floor', 'Floor3')->get()
-                   
-                ]));
-            }); */
+            
+            
+            }); 
             
         });
         $content->row(function (Row $row) {
