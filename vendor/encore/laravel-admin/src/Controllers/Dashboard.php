@@ -12,6 +12,16 @@ use Illuminate\Support\Arr;
 class Dashboard
 {
 
+
+    public static function dashboard_calender()
+    { 
+       /// $events = Utils::prepare_calendar_events(Auth::user());
+ 
+        return view('dashboard.calender', [
+           // 'events' => $events
+        ]);
+    }
+
     public static function dashboard_members()
     {
         $members = Candidate::where([])->orderBy('id', 'desc')->limit(9)->get();

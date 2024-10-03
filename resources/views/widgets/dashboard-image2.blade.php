@@ -18,8 +18,8 @@ $text2 = 'text-dark';
 /* <a href="{{ admin_url('tenants') }}" title="View All image" */
 
 ?>
-<a href="{{admin_url('second-floor') }}" title="View All image"
-    class="card {{ $bg }} {{ $border }} mb-4 mb-md-5">
+<a href="{{admin_url('ground-floor') }}"
+    class="card  {{ $border }} mb-2 mb-md-5">
     <div class="card-body py-0 pb-2 pb-md-4">
         {{-- <p class="h3  text-bold mb-2 mb-md-3 {{$text}} ">All time</p> --}}
         {{-- <p class="  m-0 text-right {{$text}} h3" style="line-height: 3.2rem">
@@ -30,8 +30,9 @@ $text2 = 'text-dark';
                 {{ 'UGX ' . number_format($rentings->sum('commision_amount')) }}
             </span><br>
         </p> --}}
-        <hr class="mt-0 mb-2 mb-md-2" style="background-color: var(--primary); height: 2px;">
-        <p class="h4  text-bold mb-2 bg-primary text-white pl-3 pt-2 pb-1">Second Flr</p>
+
+       
+        <p class="h4  text-bold mb-2  text-primary pl-3 pt-2 pb-1">  Second Floor</p>
         
        
         {{-- <img class="text-center img img-fluid rounded-circle" style="border-radius: 50%;"

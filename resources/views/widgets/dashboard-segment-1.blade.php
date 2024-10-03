@@ -50,18 +50,17 @@ if (!isset($tasks_count)) {
         </div>
     </div>
 </div>
-{{-- <div class="row">
+ <div class="row">
      <div class="col-md-6">
         @include('dashboard.recent-payments', [
-           
-             'items' => $BalanceAll, 
+           // 'items' => $BalanceAll, 
             'title' => 'Pending payments',
         ])
     </div>
-     <div class="col-md-6">
-        @include('dashboard.tasks', [
+      <div class="col-md-6">
+        @include('dashboard.rooms', [
             'items' => $vacantrooms,
             'title' => 'Pending tasks',
         ])
-    </div> 
-</div> --}}
+    </div>  
+</div>

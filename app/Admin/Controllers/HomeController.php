@@ -38,9 +38,103 @@ class HomeController extends Controller
             ->title('RUBAGA APARTMENTS - Dashboard')
             ->description('Hello ' . $u->username . "!");
          
+            $content->row(function (Row $row) {
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-groundfloor', [
+                       
+                        'rooms' => Room::where('floor', 'Floor1')->get()
+                    ]));
+                });
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-floor1', [
+                        'rooms' => Room::where('floor', 'Floor2')->get()
+                        
+                    ]));
+                });
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-floor2', [
+                        'rooms' => Room::where('floor', 'Floor3')->get()
+                       
+                    ]));
+                });
+
+               
+            });
+
+            $content->row(function (Row $row) {
+                
+
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-floor3', [
+                        'rooms' => Room::where('floor', 'Floor4')->get()
+                    ]));
+                });
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-floor4', [
+                        'rooms' => Room::where('floor', 'Floor5')->get()
+                        
+                    ]));
+                });
+                $row->column(3, function (Column $column) {
+                    $column->append(view('widgets.dashboard-floor5', [
+                        'rooms' => Room::where('floor', 'Floor6')->get()
+                        
+                    ]));
+                });
+            });
+
+            $content->row(function (Row $row) {
+                $row->column(12, function (Column $column) {
+                    $column->append(view('widgets.dashboard-title', [
+                        'title' => 'RUBAGA APARTMENTS',
+                        'sub_title' => 'Dashboard',
+                        'icon' => 'fa fa-dashboard',
+                        'color' => 'bg-aqua'
+                    ]));
+                });
+            });
 
 
-        $content->row(function (Row $row) {
+            $content->row(function (Row $row) {
+         
+           
+                 $row->column(2, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image', [
+                         
+                      ]));
+                  }); 
+                  $row->column(2, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image1', [
+                          
+                      ]));
+                  }); 
+                  $row->column(2, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image2', [
+                          
+                      ]));
+                  }); 
+                  $row->column(2, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image3', [
+                           'rooms' => Room::all(),
+                          'tenants' => Tenant::all(),
+                          'rentings' => Renting::all(),
+                          'payments' => TenantPayment::all() 
+                      ]));
+                  });
+                  $row->column(2, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image4', [
+                          
+                      ]));
+                  });
+                 /*  $row->column(1, function (Column $column) {
+                      $column->append(view('widgets.dashboard-image5', [
+                          
+                      ]));
+                  });  */
+                 
+              });
+
+       /*  $content->row(function (Row $row) {
             
             $row->column(6, function (Column $column) {
                
@@ -53,9 +147,9 @@ class HomeController extends Controller
                         'status' => 'Occupied'
                     ])->count(), 
 
-                     /* 'my_tasks_count' => MedicalService::where([
+                      'my_tasks_count' => MedicalService::where([
                         "status" => "Pending"
-                    ])->count(),  */
+                    ])->count(),  
                      'BalanceT' => TenantPayment::where(
                         "balance",
                         '<',
@@ -63,13 +157,13 @@ class HomeController extends Controller
                     )->count(),
                      'BalanceAll' => TenantPayment::where(
                         "balance",
-                        '>',
+                        '<',
                         0
                     )->get(),
-                      /* 'vacantrooms' => TenantPayment::where([
-                        'status' => 'vacant'
+                     'vacantrooms' => room::where([
+                        'status' => 'Vacant'
                     ])->limit(10)
-                        ->get()    */
+                        ->get()    
                 ]));
             
             
@@ -77,12 +171,12 @@ class HomeController extends Controller
 
             $row->column(6, function (Column $column) {
 
-                //$column->append(Dashboard::dashboard_calender());
+                $column->append(Dashboard::dashboard_calender());
             });
 
 
             
-        });
+        }); */
         $content->row(function (Row $row) {
             /* $row->column(4, function (Column $column) {
                 $column->append(view('widgets.dashboard-floor3', [
@@ -104,16 +198,7 @@ class HomeController extends Controller
            
         });
         // titlle
-        $content->row(function (Row $row) {
-            $row->column(12, function (Column $column) {
-                $column->append(view('widgets.dashboard-title', [
-                    'title' => 'RUBAGA APARTMENTS',
-                    'sub_title' => 'Dashboard',
-                    'icon' => 'fa fa-dashboard',
-                    'color' => 'bg-aqua'
-                ]));
-            });
-        });
+        
         
         $content->row(function (Row $row) {
          
